@@ -8,26 +8,28 @@ $(document).ready(function () {
         side3 = parseInt($('#side3').val());
 
         function triangleType() {
-            if (side1===side2 && side2===side3) {
-            console.log("equilateral")
+            if (side1>0 && side2>0 && side3>0) {
+                if (side1===side2 && side2===side3) {
+                return ("equilateral")
+                } else if (side1!=side2 && side2!=side3 && side3!=side1) {
+                return ("scalene")
+                } else {
+                return ("isosceles")
+                };
             } else {
-            console.log("not eq")
+            alert("this is not a triangle")
             };
         }
-        triangleType();
+        const triangle = triangleType();
+        // console.log(triangle)
+        $("#print-results").text(triangle)
 
 
     });
-    // function printResults() {
-    //     // $() hello user, here's your [triangleType]
-    // }
-    // printResults();
+
 });
 
 
-
-// side1===side2 && side2===side3    =>> equilateral
-// side1!=side2 && side2!=side3     =>> scalene
 
 
 // if (side != 0) {
@@ -43,6 +45,6 @@ $(document).ready(function () {
 
 
     // check if triangle
-    // check if equilateral
-    // check if scalene
-    // else =>> iso
+            // check if equilateral
+            // check if scalene
+            // else =>> iso
